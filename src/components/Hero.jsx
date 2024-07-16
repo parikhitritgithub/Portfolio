@@ -28,6 +28,7 @@ export default function Hero() {
             <h1 className="text-3xl p-2 text-cyan-400"></h1>
             <div className="text-3xl p-2">
               Welcome to My Portfolio, Let&apos;s <FlipWords words={words} />
+              
             </div>
           </div>
           <div className="flex flex-row p-3 space-x-2">
