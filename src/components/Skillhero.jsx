@@ -9,23 +9,20 @@ export default function Skillhero() {
 
   const router = useRouter()
   return (
-
-    <div className=''>
+    <div>
 
       <div className='flex justify-center items-center mt-[8rem] py-5'>
         <h1 className='text-5xl'>Skills</h1>
       </div>
- 
 
       <section className='py-10'>
       <SkillsCard  />
       </section>
 
-      <div>
-
-      </div>
+      <div className='flex justify-center items-center'>
       <Button variant="outline">Outline</Button>
-
+      </div>
     </div>
+    
   )
 }

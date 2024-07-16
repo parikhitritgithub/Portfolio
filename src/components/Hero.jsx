@@ -3,11 +3,12 @@ import React from "react";
 import { FlipWords } from "./ui/flip-words";
 import { Roboto } from "next/font/google";
 import { FaLinkedin, FaInstagramSquare } from "react-icons/fa";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Skillhero from "./Skillhero";
 import Image from "next/image";
 import { SlArrowDown } from "react-icons/sl";
+import Achievements from "./Achievements";
+import Navbar from "./Navbar";
 
 const roboto = Roboto({
   subsets: ['latin'],
@@ -16,10 +17,10 @@ const roboto = Roboto({
 
 export default function Hero() {
   const words = ["Build", "Collab", "Code"];
-
   return (
     <main className="p-8">
-      <div className="grid gap-5 mt-16 sm:grid-cols-12">
+     
+      <div className="grid gap-5 mt-16 sm:grid-cols-12 py-5">
         <div className="min-h-[15rem] mt-6 p-3 sm:col-span-6">
           <div className="flex flex-col justify-center">
             <h1 className="text-3xl p-2">Hello I&apos;m</h1>
@@ -30,18 +31,7 @@ export default function Hero() {
             </div>
           </div>
           <div className="flex flex-row p-3 space-x-2">
-            <Button variant="ghost" className="bg-gray">
-              <FaLinkedin />
-            </Button>
-            <Button variant="ghost" className="bg-gray">
-              <FaInstagramSquare />
-            </Button>
-            <Button variant="ghost" className="bg-gray">
-              <FaInstagramSquare />
-            </Button>
-            <Button variant="ghost" className="bg-gray p-2">
-              <FaInstagramSquare />
-            </Button>
+            <div></div>
           </div>
           <div className="grid grid-flow-col w-1/2 sm:grid-cols-12 gap-3">
             <button className="sm:w-[8rem] shadow-[inset_0_0_0_2px_#19f3f3] px-1 py-2 rounded-lg tracking-widest font-medium bg-transparent hover:bg-[#60c8ee] hover:text-white dark:text-neutral-200 transition duration-200 sm:col-span-6">
@@ -65,7 +55,8 @@ export default function Hero() {
       <div className="flex justify-center items-center">
         <SlArrowDown className="w-[2rem] text-white" />
       </div>
-      <Skillhero />
+      <div> <Skillhero /></div>
+      <div><Achievements/></div>
     </main>
   );
 }

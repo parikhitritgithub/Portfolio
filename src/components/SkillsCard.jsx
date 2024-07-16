@@ -3,6 +3,7 @@ import React from "react";
 
 // import Rating from "@/components/rating";
 import { skills } from "@/Data/Skills";
+import Rating from "./ui/rating";
 
 export default function SkillsCard() {
     return (
@@ -24,7 +25,7 @@ export default function SkillsCard() {
                                     <p className="text-sm text-muted-foreground">
                                         {skill.description}
                                     </p>
-                                    
+                                    <Rating stars={skill.rating} />
                                 </div>
                             </div>
                         </div>
