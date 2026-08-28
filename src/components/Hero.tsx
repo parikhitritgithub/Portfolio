@@ -84,7 +84,13 @@ export default function Hero() {
             View My Work
             <HiOutlineArrowDown className="w-4 h-4" />
           </a>
-          <a href="#contact" className="btn-outline flex items-center gap-2">
+          <a
+            href="/autoCV (18).pdf"
+            download="Parikhit_Kurmi_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-outline flex items-center gap-2"
+          >
             <HiOutlineDownload className="w-4 h-4" />
             Download Resume
           </a>
