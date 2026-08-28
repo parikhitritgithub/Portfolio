@@ -4,6 +4,8 @@ import {
   HiOutlineMail,
   HiOutlineLocationMarker,
   HiOutlinePaperAirplane,
+  HiCheckCircle,
+  HiExclamationCircle,
 } from "react-icons/hi";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 
@@ -49,19 +51,39 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setErrorMessage(null);
+    setSubmitted(false);
 
-    // Simulate submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
 
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", subject: "", message: "" });
+      const data = await res.json();
 
-    setTimeout(() => setSubmitted(false), 4000);
+      if (!res.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err: any) {
+      setErrorMessage(
+        err.message || "Something went wrong while sending your message."
+      );
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
@@ -79,8 +101,8 @@ export default function Contact() {
             Get in <span className="gradient-text">Touch</span>
           </h2>
           <p className="section-subheading">
-            Have a project in mind or want to collaborate? I&apos;d love to hear
-            from you.
+            Have a project in mind or want to collaborate? Send me a message and
+            let&apos;s build something extraordinary.
           </p>
         </div>
 
@@ -92,9 +114,9 @@ export default function Contact() {
                 Let&apos;s build something great
               </h3>
               <p className="text-gray-400 leading-relaxed">
-                Whether it&apos;s a full-stack SaaS platform, a real-time
-                application, or a collaborative project — I&apos;m ready to
-                bring your ideas to life.
+                Whether it&apos;s a full-stack SaaS platform, real-time backend
+                architecture, or AI/ML solutions — I&apos;m ready to bring your
+                ideas to life.
               </p>
             </div>
 
@@ -149,6 +171,24 @@ export default function Contact() {
           {/* Right Side: Form */}
           <div className="md:col-span-3">
             <form onSubmit={handleSubmit} className="glass-card p-6 md:p-8">
+              {/* Success Notification */}
+              {submitted && (
+                <div className="mb-6 p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-300 flex items-center gap-3 text-sm">
+                  <HiCheckCircle className="w-5 h-5 shrink-0" />
+                  <span>
+                    Thank you! Your message has been sent successfully. I will get back to you soon.
+                  </span>
+                </div>
+              )}
+
+              {/* Error Notification */}
+              {errorMessage && (
+                <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 text-red-300 flex items-center gap-3 text-sm">
+                  <HiExclamationCircle className="w-5 h-5 shrink-0" />
+                  <span>{errorMessage}</span>
+                </div>
+              )}
+
               <div className="grid sm:grid-cols-2 gap-4 mb-4">
                 <div>
                   <label
@@ -234,10 +274,8 @@ export default function Contact() {
                 {isSubmitting ? (
                   <>
                     <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                    Sending...
+                    Sending Message...
                   </>
-                ) : submitted ? (
-                  "Message Sent! ✓"
                 ) : (
                   <>
                     <HiOutlinePaperAirplane className="w-4 h-4 rotate-90" />

@@ -1,4 +1,17 @@
-import { SiNestjs, SiNextdotjs, SiReact, SiMongodb, SiRedis, SiSocketdotio, SiDocker, SiTypescript } from "react-icons/si";
+import {
+  SiNestjs,
+  SiNextdotjs,
+  SiReact,
+  SiMongodb,
+  SiRedis,
+  SiSocketdotio,
+  SiTypescript,
+  SiSupabase,
+  SiPostgresql,
+  SiPython,
+  SiFastapi,
+  SiThreedotjs,
+} from "react-icons/si";
 import { IconType } from "react-icons";
 
 export interface Project {
@@ -19,103 +32,103 @@ export const projects: Project[] = [
   {
     id: "inkaura",
     title: "Inkaura ERP",
-    subtitle: "Enterprise SaaS Platform",
+    subtitle: "Enterprise SaaS Platform (Final Year Minor)",
     description:
-      "A comprehensive 23-module multi-tenant SaaS ERP system for printing industry operations — from digital job slips to real-time production tracking.",
+      "A comprehensive multi-tenant SaaS ERP platform for printing operations powered by Supabase backend, NestJS, and React.",
     longDescription:
-      "Built an end-to-end enterprise resource planning platform with NestJS backend serving 23 interconnected modules. Features include digital job slip management, real-time KDS (Kitchen Display System) for production floors, inventory tracking, packaging workflows, and multi-tenant isolation with role-based access control.",
+      "Built an end-to-end enterprise resource planning platform with Supabase database and authentication services, alongside a modular NestJS backend. Features include digital job slip management, order status tracking, inventory management, multi-tenant data isolation, and RBAC.",
     techStack: [
+      { name: "Supabase", icon: SiSupabase, color: "#3ECF8E" },
       { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
       { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
-      { name: "Redis", icon: SiRedis, color: "#DC382D" },
-      { name: "Socket.IO", icon: SiSocketdotio, color: "#010101" },
-      { name: "Docker", icon: SiDocker, color: "#2496ED" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     ],
     highlights: [
-      "23 interconnected business modules",
-      "Real-time production tracking via Socket.IO + Redis pub/sub",
-      "Multi-tenant architecture with data isolation",
-      "Digital job slip workflow replacing manual processes",
-      "Reduced deployment time by ~60% with Docker Compose",
+      "Multi-tenant SaaS ERP architecture built for printing industry operations",
+      "Powered by Supabase for PostgreSQL database, authentication, and security",
+      "Digital job slip workflow replacing manual processes across departments",
+      "Role-based access control (RBAC) with secure data isolation",
     ],
     category: "fullstack",
     featured: true,
     liveUrl: "https://inkaura-16fj.vercel.app",
-    githubUrl: "#",
+    githubUrl: "https://github.com/parikhitritgithub/Final-year-minor",
   },
   {
     id: "dinestay",
     title: "Dine & Stay OS",
-    subtitle: "Hospitality Management System",
+    subtitle: "Hospitality Management SaaS",
     description:
       "Real-time hospitality management platform with live KDS updates, table management, and order tracking for restaurants and hotels.",
     longDescription:
-      "A comprehensive hospitality operating system featuring real-time kitchen display systems, table/room management, order lifecycle tracking, and integrated billing. Built with a microservices-oriented architecture supporting concurrent operations across multiple departments.",
+      "A multi-tenant Restaurant POS and Hotel Management SaaS built using a Turborepo monorepo with NestJS, Next.js 14, PostgreSQL 16, Redis, and Socket.IO. Features a 23-module backend covering GST-compliant billing, real-time KDS, hotel reservations, and inventory with row-level tenant scoping.",
     techStack: [
       { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
-      { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-      { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
+      { name: "Next.js 14", icon: SiNextdotjs, color: "#FFFFFF" },
+      { name: "PostgreSQL", icon: SiPostgresql, color: "#4169E1" },
       { name: "Socket.IO", icon: SiSocketdotio, color: "#010101" },
       { name: "Redis", icon: SiRedis, color: "#DC382D" },
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     ],
     highlights: [
-      "Sub-200ms real-time KDS updates via Socket.IO",
-      "Supports 50+ concurrent tenant sessions",
-      "Integrated billing and inventory management",
-      "Role-based dashboard for different departments",
+      "Sub-200ms real-time KDS updates via Socket.IO/Redis pub-sub",
+      "23-module backend with 36-table PostgreSQL schema",
+      "GST-compliant billing, hotel reservations, and inventory management",
+      "Row-level scoping for secure multi-tenant data isolation",
     ],
     category: "fullstack",
+    featured: true,
+    githubUrl: "#",
+  },
+  {
+    id: "shapeit",
+    title: "ShapeIt — 3D Generation",
+    subtitle: "IEEE INSTCon 2026 (Paper ID: 1611)",
+    description:
+      "Real-Time Interactive 3D Generation platform benchmarking TripoSR against Shap-E with a 2.59x improvement in mean inference latency.",
+    longDescription:
+      "Developed the codebase underlying architecture recognized at IEEE INSTCon 2026 (Paper ID: 1611). Exposed generation pipelines as asynchronous Python (FastAPI) endpoints on CPU while routing GPU steps to cloud infra. Built a React and Three.js interactive canvas with orbit controls.",
+    techStack: [
+      { name: "FastAPI", icon: SiFastapi, color: "#009688" },
+      { name: "Python", icon: SiPython, color: "#3776AB" },
+      { name: "React", icon: SiReact, color: "#61DAFB" },
+      { name: "Three.js", icon: SiThreedotjs, color: "#FFFFFF" },
+      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
+    ],
+    highlights: [
+      "Principal Author of IEEE INSTCon 2026 accepted research paper (Paper ID: 1611)",
+      "Benchmarked TripoSR against Shap-E latent diffusion with 2.59x inference latency speedup",
+      "Asynchronous Python (FastAPI) endpoints routing GPU steps to cloud infrastructure",
+      "Hardware-accelerated 3D rendering canvas with real-time orbit controls",
+    ],
+    category: "ml",
     featured: true,
     githubUrl: "#",
   },
   {
     id: "anusandhan",
-    title: "Anusandhan",
-    subtitle: "Research Management System",
+    title: "Anusandhan (AMS)",
+    subtitle: "Research Intelligence Platform",
     description:
-      "Centralized research management platform for academic institutions with document tracking, review workflows, and analytics dashboards.",
+      "Centralized research management system featuring a semantic duplicate-detection engine with Sentence Transformers, Qdrant, and FAISS.",
     longDescription:
-      "A digital-first research management platform that streamlines academic research workflows — from proposal submission and peer review to publication tracking. Features automated pipeline for document processing and real-time collaboration tools.",
+      "Architected a research-intelligence platform featuring a semantic duplicate-detection engine built with Sentence Transformers (all-MiniLM-L6-v2), Qdrant, and FAISS. Implemented RBAC across scientist and administrator portals secured with stateless JWT authentication.",
     techStack: [
       { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "NestJS", icon: SiNestjs, color: "#E0234E" },
+      { name: "Node.js", icon: SiNestjs, color: "#339933" },
       { name: "MongoDB", icon: SiMongodb, color: "#47A248" },
       { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
     ],
     highlights: [
-      "Automated document processing pipeline",
-      "Real-time collaboration and review system",
-      "Analytics dashboard with visual reports",
-      "Role-based access for researchers and admins",
+      "Semantic duplicate-detection engine using Sentence Transformers, Qdrant & FAISS",
+      "Stateless JWT authentication & RBAC for scientist and administrator portals",
+      "Deployed to production via Vercel cloud hosting",
+      "Automated document processing and review workflows",
     ],
     category: "fullstack",
-    featured: false,
+    featured: true,
     liveUrl: "https://ams-frontend-liart.vercel.app",
-    githubUrl: "#",
-  },
-  {
-    id: "portfolio",
-    title: "Developer Portfolio",
-    subtitle: "Personal Portfolio Website",
-    description:
-      "This very website — built with Next.js 14, Tailwind CSS, and Framer Motion. Features glassmorphism design, smooth animations, and responsive layout.",
-    longDescription:
-      "A modern, performant developer portfolio showcasing projects, skills, and experience. Built with Next.js App Router, Tailwind CSS for styling, and Framer Motion for animations. Features include dark mode, glassmorphic UI elements, and smooth scroll navigation.",
-    techStack: [
-      { name: "Next.js", icon: SiNextdotjs, color: "#FFFFFF" },
-      { name: "React", icon: SiReact, color: "#61DAFB" },
-      { name: "TypeScript", icon: SiTypescript, color: "#3178C6" },
-    ],
-    highlights: [
-      "Next.js 14 App Router with SSR",
-      "Glassmorphism design system",
-      "Framer Motion animations",
-      "Fully responsive & accessible",
-    ],
-    category: "frontend",
-    featured: false,
     githubUrl: "#",
   },
 ];
@@ -123,6 +136,7 @@ export const projects: Project[] = [
 export const projectCategories = [
   { key: "all", label: "All Projects" },
   { key: "fullstack", label: "Full Stack" },
+  { key: "ml", label: "AI / ML & 3D" },
   { key: "frontend", label: "Frontend" },
   { key: "backend", label: "Backend" },
 ] as const;
