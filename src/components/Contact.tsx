@@ -13,8 +13,8 @@ const contactInfo = [
   {
     icon: HiOutlineMail,
     label: "Email",
-    value: "parikhitkurmi@gmail.com",
-    href: "mailto:parikhitkurmi@gmail.com",
+    value: "parikhitkurmi44@gmail.com",
+    href: "mailto:parikhitkurmi44@gmail.com",
   },
   {
     icon: HiOutlineLocationMarker,
