@@ -9,11 +9,11 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           {/* Logo & Copyright */}
           <div className="flex items-center gap-3">
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-purple-500 flex items-center justify-center text-white font-bold text-xs">
-              PK
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-brand-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm shadow-md">
+              प
             </div>
             <span className="text-sm text-gray-400">
-              © {new Date().getFullYear()} Parikhit Kurmi. Built with Next.js & Tailwind CSS.
+              © {new Date().getFullYear()} <span className="font-semibold text-gray-200">परीक्षित्</span>. Built with Next.js & Tailwind CSS.
             </span>
           </div>
 

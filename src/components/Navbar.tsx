@@ -60,14 +60,26 @@ export default function Navbar() {
             {/* Logo */}
             <button
               onClick={() => scrollToSection("#home")}
-              className="flex items-center gap-2 group hover:scale-105 transition-transform"
+              className="flex items-center gap-3 group hover:scale-105 transition-transform"
             >
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-brand-500 to-purple-500 flex items-center justify-center text-white font-bold text-sm">
-                PK
+              {/* Logo Badge Icon */}
+              <div className="relative flex items-center justify-center">
+                <div className="absolute -inset-1 rounded-xl bg-gradient-to-r from-brand-500 via-purple-500 to-cyan-500 opacity-70 blur-xs group-hover:opacity-100 transition duration-300"></div>
+                <div className="relative w-10 h-10 rounded-xl bg-surface-100 border border-white/10 flex items-center justify-center shadow-inner">
+                  <span className="font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-brand-300 via-purple-300 to-cyan-300 text-lg tracking-wider">
+                    प
+                  </span>
+                </div>
               </div>
-              <span className="text-lg font-semibold text-white hidden sm:block">
-                Parikhit
-                <span className="text-brand-400">.dev</span>
+
+              {/* Devnagari Name */}
+              <span className="text-xl font-bold tracking-wide text-white group-hover:text-brand-300 transition-colors">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-100 to-brand-300 drop-shadow-sm">
+                  परीक्षित्
+                </span>
+                <span className="text-brand-400 font-extrabold text-2xl leading-none inline-block ml-0.5 animate-pulse">
+                  .
+                </span>
               </span>
             </button>
 
