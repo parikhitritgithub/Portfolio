@@ -41,6 +41,7 @@ export const projects: Project[] = [
     ],
     category: "fullstack",
     featured: true,
+    liveUrl: "https://inkaura-16fj.vercel.app",
     githubUrl: "#",
   },
   {
@@ -91,6 +92,7 @@ export const projects: Project[] = [
     ],
     category: "fullstack",
     featured: false,
+    liveUrl: "https://ams-frontend-liart.vercel.app",
     githubUrl: "#",
   },
   {
